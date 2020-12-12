@@ -1,0 +1,96 @@
+<section class="cog_page_section">
+    <div class="contact_hero">
+        <img src="{{ section.settings.cog_contact_hero  | img_url: 'master' }}" />
+    </div>
+    <div class="contact_address">{{ section.settings.cog_contact_address}}</div>
+    
+    <section class="contact_wrapper">
+        <div class="contact_content">
+            <div class="contact_content_title">Social</div>
+            <div class="contact_social">
+                <span class="social_item"><a href="{{section.settings.cog_instagram}}">Instagram</a></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="social_item"><a href="{{section.settings.cog_facebook}}">Facebook</a></span>
+            </div>
+        </div>
+    
+        
+        <div class="contact_content">
+            <div class="contact_content_title">Inquiries</div>
+            
+            <div class="contact_email">
+                <div class="contact_email_desc">{{ section.settings.cog_shipping_contact}}</div>
+                <div class="contact_email_item"><a href="mailto:{{ section.settings.cog_shipping_email }}">{{ section.settings.cog_shipping_email }}</a></div>
+            </div>
+
+            <div class="contact_email">
+                <div class="contact_email_desc">{{ section.settings.cog_sales_contact}}</div>
+                <div class="contact_email_item"><a href="mailto:{{ section.settings.cog_sales_email }}">{{ section.settings.cog_sales_email }}</a></div>
+            </div>
+
+            <div class="contact_email">
+                <div class="contact_email_desc">{{ section.settings.cog_work_contact}}</div>
+                <div class="contact_email_item"><a href="mailto:{{ section.settings.cog_work_email }}">{{ section.settings.cog_work_email }}</a></div>
+            </div>
+        </div>
+
+        
+    </section>
+
+</section>
+
+{% schema %}
+{
+    "name": "COG Contact",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "cog_contact_hero",
+            "label": "Contact Image"
+        },
+        {
+            "type": "textarea",
+            "id": "cog_contact_address",
+            "label": "Contact Address"
+        },
+        {
+            "type": "url",
+            "id": "cog_instagram",
+            "label": "Instagram"
+        },
+        {
+            "type": "url",
+            "id": "cog_facebook",
+            "label": "Facebook"
+        },
+        {
+            "type": "textarea",
+            "id": "cog_shipping_contact",
+            "label": "Shipping Email Info"
+        },
+        {
+            "type": "text",
+            "id": "cog_shipping_email",
+            "label": "Shipping Email"
+        },
+        {
+            "type": "textarea",
+            "id": "cog_sales_contact",
+            "label": "Sales Email Info"
+        },
+        {
+            "type": "text",
+            "id": "cog_sales_email",
+            "label": "Sales Email"
+        },
+        {
+            "type": "textarea",
+            "id": "cog_work_contact",
+            "label": "Work Email Info"
+        },
+        {
+            "type": "text",
+            "id": "cog_work_email",
+            "label": "Work Email"
+        }
+    ]
+}
+{% endschema %}

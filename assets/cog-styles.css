@@ -122,6 +122,55 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
 }
 
+/* Contact Page */
+.contact_hero {
+    text-align: center;
+    margin-top: 75px;
+    margin-bottom: 25px;
+}
+.contact_address {
+    color: var(--color-blue);
+    font-size: 20px;
+    text-align: center;
+}
+.social_item {
+    font-size: 18px;
+}
+.contact_wrapper {
+    width:80%;
+    margin:125px auto 0;
+    border-top: 1px solid;
+    padding-top: 75px;
+    color: var(--color-blue);
+    text-align: center;
+}
+.contact_content_title {
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-bottom: 30px;
+}
+.contact_content {
+    padding-bottom:50px;
+}
+.contact_email {
+    padding-bottom:50px;
+    font-family: var(--body-font);
+    font-size: 20px;
+}
+.contact_email_desc {
+    font-weight: normal;
+    padding-bottom: 15px;
+}
+.contact_email_item {
+    font-family: var(--body-font);
+    letter-spacing: 1px;
+}
+.contact_email_item a {
+    color: var(--color-blue);
+    /* font-weight: normal; */
+    text-transform: uppercase;
+}
+
 /* Footer */
 .footer .toggle_content {
     /* display: block !important; */
