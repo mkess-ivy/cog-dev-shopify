@@ -1,0 +1,23 @@
+<section class="cog_page_section_title">
+    <div class="cog_page_title">{{section.settings.cog_press_title}}</div>
+    <div class="cog_page_description">{{section.settings.cog_press_desc}}</div>
+</section>
+
+{% schema %}
+{
+    "name": "COG Page Title",
+    "settings": [
+        {
+            "type": "text",
+            "id": "cog_press_title",
+            "label": "Press Page Title"
+
+        },
+        {
+            "type": "textarea",
+            "id": "cog_press_desc",
+            "label": "Press Page Description"
+        }
+    ]
+}
+{% endschema %}

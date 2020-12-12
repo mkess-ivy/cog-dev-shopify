@@ -1,0 +1,53 @@
+<section class="cog_page_section">
+    <div class="cog_press_hero">
+        <img src="{{section.settings.cog_press_hero  | img_url: 'master'}}" />
+    </div>
+
+    <div class="cog_press_partners">
+        <div class="frow justify-between">
+            {% for block in section.blocks %}
+            <div class="cog_partner_logo">
+                <a href="{{ block.settings.partner_logo_url }}">
+                    <img src="{{ block.settings.cog_partner_logo | img_url: 'large' }}" alt="{{ block.settings.cog_partner_logo_alt}}" class="partner-logo-width" target="_blank"/>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "COG Press Content",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "cog_press_hero",
+            "label": "Press Hero Image"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "component",
+            "name": "COG Partner Logo",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "cog_partner_logo",
+                    "label": "Partner Logo"
+                },
+                {
+                    "type": "text",
+                    "id": "cog_partner_logo_alt",
+                    "label": "Partner Logo Alt Desc"
+                },
+                {
+                    "type": "url",
+                    "id": "partner_logo_url",
+                    "label": "Partner Logo URL"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
