@@ -1,0 +1,52 @@
+<section class="cog_page_section">
+    
+    <div class="cs_wrapper">
+        <section class="cs_item">
+            <div class="cs_title">Shipping</div>
+            <div class="cs_content">{{ section.settings.cog_shipping}}</div>
+        </section>
+
+        <section class="cs_item">
+            <div class="cs_title">Pre-Orders</div>
+            <div class="cs_content">{{ section.settings.cog_preorders}}</div>
+        </section>
+
+        <section class="cs_item">
+            <div class="cs_title">Returns</div>
+            <div class="cs_content">{{ section.settings.cog_returns}}</div>
+        </section>
+
+        <section class="cs_item">
+            <div class="cs_title">Exchanges</div>
+            <div class="cs_content">{{ section.settings.cog_exchanges}}</div>
+        </section>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "COG Customer Service",
+    "settings": [
+        {
+            "type": "textarea",
+            "id": "cog_shipping",
+            "label": "Shipping Text"
+        },
+        {
+            "type": "textarea",
+            "id": "cog_preorders",
+            "label": "Pre-Orders Text"
+        },
+        {
+            "type": "textarea",
+            "id": "cog_returns",
+            "label": "Returns Text"
+        },
+        {
+            "type": "textarea",
+            "id": "cog_exchanges",
+            "label": "Exchanges Text"
+        }
+    ]
+}
+{% endschema %}

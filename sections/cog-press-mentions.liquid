@@ -1,4 +1,4 @@
-<section class="cog_page_section">
+<section class="cog_page_section_title">
     <div class="cog_page_title">{{section.settings.cog_press_mentions_title}}</div>
     {% if section.settings.cog_press_mentions_desc %}
         <div class="cog_page_description">{{section.settings.cog_press_mentions_desc}}</div>
@@ -9,13 +9,13 @@
     <div class="press_mentions_list">
         {% for block in section.blocks %}
         <div class="pm_item">
-            <div class="pm_pub">
-                {{ block.settings.pm-pub}}
+            <div class="frow justify-start">
+                <div class="pm_pub">
+                    {{ block.settings.pm-pub}}
+                </div>
+                <div class="pm_title"><a href="{{ block.settings.pm-url }}" target="_blank">{{ block.settings.pm-title }}</a></div>
+                </a>
             </div>
-            
-            <a href="{{ block.settings.pm-url }}" target="_blank">
-                <div class="pm_title">{{ block.settings.pm-title }}</div>
-            </a>
         </div>
         {% endfor %}
     </div>

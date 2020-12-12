@@ -4,27 +4,50 @@
     --body-font: 'DM Serif Text', Helvetica, sans-serif;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    font-family: var(--header-font);
+}
+
+/* Product */
+
+.product_section .description {
+    font-family: var(--body-font);
+    font-weight: normal;
+    font-size: 18px;
+}
+.section.product_section {
+    margin-top:50px;
+}
+.related-products-wrapper {
+    margin-top:150px;
+}
+
+/* Shop Page */
+#shopify-section-collection-template {
+    margin-top: 100px;
+}
+
 /*  Press Page */
 .cog_page_wrapper {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 75px auto 0;
 }
 .cog_page_section_title {
-    width: 75%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
     color: var(--color-blue);
 }
 .cog_page_title {
-    font-family: 'DM Serif Display', Helvetica, sans-serif;
+    font-family: var(--header-font);
     text-transform:uppercase;
-    font-size:48px;
+    font-size:24px;
     line-height: 1;
     padding-bottom:25px;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
 }
 .cog_page_description {
-    font-family: 'DM Serif Text', Helvetica, sans-serif;
+    font-family: var(--body-font);
     font-size: 18px;
     font-weight: normal;
     padding-bottom: 50px;
@@ -32,17 +55,154 @@
 .cog_press_hero {
     text-align: center;
 }
+.cog_press_hero img {
+    width: 100%;
+}
 
 /*  Press Partners */
 .cog_press_partners {
     padding: 75px 0 125px;
 }
 .cog_partner_logo {
-    width: 27%;
-    padding: 0 20px;
+    /* width: 50%; */
+    width:75%;
+    max-width:250px;
+    /* padding: 0 10px; */
+    padding: 0 10px 20px;
+    margin:auto;
 }
 .partner-logo-width {
-    width: 300px;
+    width: 100%;
 }
 
 /* Press Mentions */
+.pm_pub {
+    font-weight: bold;
+    margin:auto;
+    font-size: 15px;
+    padding-bottom: 15px;
+    
+}
+.pm_item {
+    font-size: 18px;
+    /* padding-bottom: 15px; */
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--color-blue);
+    margin-bottom: 15px;
+    color: var(--color-blue);
+    text-align: center; 
+}
+
+.pm_item a,
+.pm_item a:visited {
+    color: var(--color-blue);
+}
+.pm_title {
+    width:100%;
+}
+
+/* Customer Service Page */
+.cs_wrapper {
+    margin-top:75px;
+}
+.cs_item {
+    margin-bottom:50px;
+    color: var(--color-blue);
+}
+.cs_title {
+    font-size:20px;
+    text-transform:uppercase;
+    padding-bottom:7px;
+    font-family: var(--header-font);
+    letter-spacing: 1px;
+}
+.cs_content {
+    font-size:18px;
+    font-family: var(--body-font);
+    font-weight: normal;
+}
+
+/* Footer */
+.footer .toggle_content {
+    /* display: block !important; */
+}
+
+.footer_content {
+
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 550px) {
+
+}
+
+@media screen and (min-width: 767px) {
+    .cog_page_wrapper {
+        width: 75%;
+    }
+
+    /* Press Title */
+    .cog_page_section_title {
+        /* width: 75%; */
+    }
+    .cog_page_description {
+        width:63%;
+        margin:auto;
+    }
+    .cog_press_hero {
+        width: 75%;
+        margin: auto;
+    }
+    .cog_press_partners {
+        width: 75%;
+        margin: auto;
+    }
+
+    /* Press Mentions */
+    .pm_pub {
+        font-weight: bold;
+        margin-right: 30px;
+        max-width: 225px;
+        width:25%;
+    }
+    .pm_title {
+        width: 70%;
+    }
+    .pm_item {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cog_page_title {
+        font-size:48px;
+    }
+
+    .cog_partner_logo {
+        width: 32%;
+        padding: 0 20px 35px;
+        text-align: center;
+        margin: auto;
+    }
+
+    .partner-logo-width {
+        width: 200px;
+    }
+
+    .cog_press_hero {
+        width: 75%;
+    }
+    .cog_press_partners {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    
+}
+
+@media screen and (min-width: 1350px) {
+    
+}
