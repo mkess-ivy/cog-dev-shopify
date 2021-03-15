@@ -1,12 +1,117 @@
 :root {
     --color-blue: #0C0863;
+    --color-white: #ffffff;
+    --color-black: #000;
     --header-font: 'DM Serif Display', Helvetica, sans-serif;
     --body-font: 'DM Serif Text', Helvetica, sans-serif;
 }
 
+
 h1,h2,h3,h4,h5,h6 {
     font-family: var(--header-font);
 }
+
+/* Global */
+.cog_wrapper_home {
+    margin:0 15px;
+    font-family: var(--body-font);
+}
+.cart_container {
+    display: inline;
+}
+.cog_newsletter {
+    padding: 55px 0;
+}
+.cog_footer_group {
+    background: #000;
+    color: var(--color-white);
+    padding: 25px 110px;
+}
+.cog_logo_footer {
+    width: 130px;
+    padding-bottom: 7px;
+}
+.cog_logo_footer img {
+    width: 100%;
+}
+.footer_left {
+    font-size: 14px;
+}
+.footer_right ul {
+    list-style: none;
+}
+.footer_right ul li {
+    margin-bottom:0;
+    font-size: 22px;
+    line-height: 1.3;
+}
+.footer_right ul li a {
+    color: var(--color-white);
+}
+.cog_social {
+    margin-left:20px;
+}
+.cog_social span {
+    width: 35px;
+    margin: 18px 0 0 15px;
+}
+
+/* Home */
+.cog_home_hero {
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 75vh;
+}
+.cog_home_img {
+    width: 225px;
+    margin: auto;
+}
+.cog_home_img img {
+    width: 100%;
+}
+.cog_shop_hero {
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    height:45vh;
+    margin: 15px 0;
+    color: var(--color-white);
+    font-size: 72px;
+}
+.cog_bottom_half {
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: cover;
+    height: 70vh;
+    color: var(--color-white);
+    font-size: 72px;
+}
+.cog_home_bottom {
+    /* margin-bottom: 15px; */
+}
+.cog_bottom_link,
+.cog_shop_link {
+    display: block;
+    width: 49.5%;
+    text-decoration: none;
+}
+.cog_shop_link {
+    width:100%;
+}
+.cog_newsletter_title {
+    font-size: 48px;
+    padding: 15px 25px;
+    width: 375px;
+    line-height: 1;
+    font-weight: normal;
+    margin-left: 75px;
+}
+.cog_newsletter_group {
+    margin: 40px 75px 0 0;
+}
+
 
 /* Product */
 

@@ -1,0 +1,73 @@
+<footer class="cog_footer_group">
+    <div class="frow justify-between">
+        <div class="footer_left">
+            <div class="cog_logo_footer"><img src="{{ section.settings.cog_logo_footer | img_url: "master" }}" /></div>
+            <div class="cog_copyright">{{ section.settings.cog_copyright_year }}. © {{ section.settings.cog_copyright_name }}. {{ section.settings.cog_copyright_reserved }}.</div>
+        </div>
+        <div class="footer_right">
+            <div class="frow justify-between">
+                <ul>
+                    {% for link in linklists.footer.links %}
+                        <li>
+                            <a href="{{ link.url }}">{{ link.title }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="cog_social">
+                    <div class="frow justify-start">
+                        <span><a href="{{ section.settings.cog_instagram_url }}"><img src="{{ section.settings.cog_instagram_icon | img_url: 'master' }}"/></a></span>
+                        <span><a href="{{ section.settings.cog_facebook_url }}"><img src="{{ section.settings.cog_facebook_icon | img_url: 'master' }}" /></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+{% schema %}
+{
+    "name": "COG Footer",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "cog_logo_footer",
+            "label": "COG Footer Logo"
+        },
+        {
+            "type": "text",
+            "id": "cog_copyright_year",
+            "label": "COG Copyright Year"
+        },
+        {
+            "type": "text",
+            "id": "cog_copyright_name",
+            "label": "COG Copyright Name"
+        },
+        {
+            "type": "text",
+            "id": "cog_copyright_reserved",
+            "label": "COG Copyright Reserved"
+        },
+        {
+            "type": "image_picker",
+            "id": "cog_instagram_icon",
+            "label": "COG Instagram Icon"
+        },
+        {
+            "type": "url",
+            "id": "cog_instagram_url",
+            "label": "COG Instagram URL"
+        },
+        {
+            "type": "image_picker",
+            "id": "cog_facebook_icon",
+            "label": "COG Facebook Icon"
+        },
+        {
+            "type": "url",
+            "id": "cog_facebook_url",
+            "label": "COG Facebook URL"
+        }
+    ]
+}
+{% endschema %}

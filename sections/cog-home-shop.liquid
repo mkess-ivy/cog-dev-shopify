@@ -1,0 +1,32 @@
+<a href="{{ section.settings.cog_shop_url }}" class="cog_shop_link">
+    <section class="cog_shop_hero" style="background-image:url('{{ section.settings.cog_home_shop_img | img_url: 'master' }}');">
+        <div class="frow centered">
+            <div class="cog_home_title">
+                {{ section.settings.cog_shop_title }}
+            </div>
+        </div>
+    </section>
+</a>
+
+{% schema %}
+{
+    "name": "COG Shop",
+    "settings": [
+        {
+            "type": "text",
+            "id": "cog_shop_title",
+            "label": "COG Title"
+        },
+        {
+            "type": "url",
+            "id": "cog_shop_url",
+            "label": "COG Shop URL"
+        },
+        {
+            "type": "image_picker",
+            "id": "cog_home_shop_img",
+            "label": "COG Shop BG Img"
+        }
+    ]
+}
+{% endschema %}

@@ -1,0 +1,46 @@
+<section class="cog_home_bottom">
+    <div class="frow justify-between">
+        <a href="{{ section.settings.cog_shop_url }}" class="cog_bottom_link">
+            <div class="cog_bottom_half" style="background-image:url('{{ section.settings.cog_bottom_one | img_url: 'master' }}');">
+                <div class="frow centered">
+                    {{ section.settings.cog_bottom_left_text }}
+                </div>
+            </div>
+        </a>
+        <a href="{{ section.settings.cog_shop_url }}" class="cog_bottom_link">
+            <div class="cog_bottom_half" style="background-image:url('{{ section.settings.cog_bottom_two | img_url: 'master' }}');">
+                <div class="frow centered">
+                    {{ section.settings.cog_bottom_right_text }}
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "COG Bottom",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "cog_bottom_one",
+            "label": "COG Bottom Img 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "cog_bottom_two",
+            "label": "COG Bottom Img 2"
+        },
+        {
+            "type": "text",
+            "id": "cog_bottom_left_text",
+            "label": "COG Bottom Left Text"
+        },
+        {
+            "type": "text",
+            "id": "cog_bottom_right_text",
+            "label": "COG Bottom Right Text"
+        }
+    ]
+}
+{% endschema %}

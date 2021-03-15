@@ -36,11 +36,7 @@
       {% if section.settings.search_enabled %}
         <a href="/search" class="icon-search dropdown_link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
       {% endif %}
-      {% if section.settings.show_cart %}
-        <div class="cart_container">
-          <a href="/cart" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" title="{{ 'layout.general.cart' | t | escape }}" data-no-instant> <span class="cart_count">{{ cart.item_count }}</span></a>
-        </div>
-      {% endif %}
+      
     </div>
 
   </div>
@@ -66,7 +62,7 @@
         {% if section.settings.phone_number != blank %}
           <li><a href="tel:+{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number }}</a></li>
         {% endif %}
-
+        
         {% if shop.customer_accounts_enabled %}
           {% if customer %}
             <li>
@@ -118,21 +114,69 @@
         <div class="promo_banner-close"></div>
       </div>
     {% endif %}
-    <div class="top_bar clearfix">
-      {% if section.settings.social_icons_header %}
-        {% include 'social-icons' %}
-      {% endif %}
-      <ul class="menu left">
-        {% if section.settings.phone_number != blank %}
-          <li><a href="tel:+{{ section.settings.phone_number | replace: ' ', '' | replace: '+', '' | replace: '-', '' }}">{{ section.settings.phone_number }}</a></li>
-        {% endif %}
-        {% if section.settings.top_bar_menu != blank %}
-          {% for link in linklists[section.settings.top_bar_menu].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-          {% endfor %}
-        {% endif %}
-      </ul>
-      {% if section.settings.show_cart %}
+    
+
+    <div class="main_nav_wrapper">
+      <div class="main_nav clearfix menu-position--{{ section.settings.menu_position }} logo-align--{{ section.settings.logo_position }}">
+        {% capture logo %}
+          <div class="logo text-align--{{ section.settings.logo_alignment }}">
+            <a href="{{ shop.url }}" title="{{ shop.name }}">
+              {% if section.settings.logo_home != nil %}
+                <img src="{{ section.settings.logo_home | img_url: '410x' }}" class="secondary_logo" alt="{{ shop.name | escape }}" />
+              {% endif %}
+              {% if section.settings.logo != nil %}
+                <img src="{{ section.settings.logo | img_url: '410x' }}" class="primary_logo" alt="{{ shop.name | escape }}" />
+              {% else %}
+                {{ shop.name }}
+              {% endif %}
+            </a>
+          </div>
+        {% endcapture %}
+
+        {% assign vertical_menu = section.settings.vertical_menu %}
+
+        {% capture menu_left %}
+          {% if vertical_menu %}
+            {% include 'vertical-menu' with section.settings.main_linklist %}
+          {% else %}
+            {% include 'menu' with section.settings.main_linklist %}
+          {% endif %}
+        {% endcapture %}
+
+        {% capture menu_right %}
+          {% if vertical_menu %}
+            {% include 'vertical-menu' with section.settings.main_linklist2 %}
+          {% else %}
+            {% include 'menu' with section.settings.main_linklist2 %}
+          {% endif %}
+          {% if section.settings.search_enabled %}
+            <li class="search_container" data-autocomplete-{{ settings.enable_autocomplete }}>
+              <form action="/search" class="search_form">
+                {% if settings.search_option != 'everything' %}
+                  <input type="hidden" name="type" value="product" />
+                {% endif %}
+                <span class="icon-search search-submit"></span>
+                <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" value="{% if search and search.results.first.price %}{{ search.terms | replace: '*', '' }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
+              </form>
+            </li>
+            <li class="search_link">
+              <a href="/search" class="icon-search dropdown_link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
+            </li>
+          {% endif %}
+        {% endcapture %}
+
+        {% if section.settings.logo_position == "left" or section.settings.menu_position == "block" %}
+          {{ logo }}
+          <div class="nav">
+            <ul class="menu {{ section.settings.menu_alignment }} clearfix">
+              {{ menu_left }}
+              {{ menu_right }}
+              {% if shop.customer_accounts_enabled %}
+                <li>
+                  <a href="/account" class="icon-user" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
+                </li>
+              {% endif %}
+              {% if section.settings.show_cart %}
         <div class="cart_container">
           <a href="/cart" class="{% if section.settings.cart_icon == "cart" %}icon-cart{% else %}icon-bag{% endif %} mini_cart dropdown_link" data-no-instant>
             <span class="cart_count">{{ cart.item_count }}</span>
@@ -252,77 +296,8 @@
           {% endunless %}
         </div>
       {% endif %}
-
-      <ul class="menu right">
-        {% if settings.show_multiple_currencies %}
-          <li>
-            {% include 'currencies-switcher' %}
-          </li>
-        {% endif %}
-        {% if shop.customer_accounts_enabled %}
-          <li>
-            <a href="/account" class="icon-user" title="{{ 'layout.customer.my_account' | t }} {% if customer %}({{ customer.email }}){% endif %}"> <span>{% if customer %}{{ 'layout.customer.my_account' | t }}{% else %}{{ 'layout.customer.log_in' | t }}{% endif %}</span></a>
-          </li>
-        {% endif %}
-      </ul>
-    </div>
-
-    <div class="main_nav_wrapper">
-      <div class="main_nav clearfix menu-position--{{ section.settings.menu_position }} logo-align--{{ section.settings.logo_position }}">
-        {% capture logo %}
-          <div class="logo text-align--{{ section.settings.logo_alignment }}">
-            <a href="{{ shop.url }}" title="{{ shop.name }}">
-              {% if section.settings.logo_home != nil %}
-                <img src="{{ section.settings.logo_home | img_url: '410x' }}" class="secondary_logo" alt="{{ shop.name | escape }}" />
-              {% endif %}
-              {% if section.settings.logo != nil %}
-                <img src="{{ section.settings.logo | img_url: '410x' }}" class="primary_logo" alt="{{ shop.name | escape }}" />
-              {% else %}
-                {{ shop.name }}
-              {% endif %}
-            </a>
-          </div>
-        {% endcapture %}
-
-        {% assign vertical_menu = section.settings.vertical_menu %}
-
-        {% capture menu_left %}
-          {% if vertical_menu %}
-            {% include 'vertical-menu' with section.settings.main_linklist %}
-          {% else %}
-            {% include 'menu' with section.settings.main_linklist %}
-          {% endif %}
-        {% endcapture %}
-
-        {% capture menu_right %}
-          {% if vertical_menu %}
-            {% include 'vertical-menu' with section.settings.main_linklist2 %}
-          {% else %}
-            {% include 'menu' with section.settings.main_linklist2 %}
-          {% endif %}
-          {% if section.settings.search_enabled %}
-            <li class="search_container" data-autocomplete-{{ settings.enable_autocomplete }}>
-              <form action="/search" class="search_form">
-                {% if settings.search_option != 'everything' %}
-                  <input type="hidden" name="type" value="product" />
-                {% endif %}
-                <span class="icon-search search-submit"></span>
-                <input type="text" name="q" placeholder="{{ 'general.search.title' | t: shop_name: shop.name }}" value="{% if search and search.results.first.price %}{{ search.terms | replace: '*', '' }}{% endif %}" autocapitalize="off" autocomplete="off" autocorrect="off" />
-              </form>
-            </li>
-            <li class="search_link">
-              <a href="/search" class="icon-search dropdown_link" title="{{ 'general.search.title' | t | escape }}" data-dropdown-rel="search"></a>
-            </li>
-          {% endif %}
-        {% endcapture %}
-
-        {% if section.settings.logo_position == "left" or section.settings.menu_position == "block" %}
-          {{ logo }}
-          <div class="nav">
-            <ul class="menu {{ section.settings.menu_alignment }} clearfix">
-              {{ menu_left }}
-              {{ menu_right }}
             </ul>
+            
           </div>
         {% else %}
           <div class="nav">
@@ -335,6 +310,7 @@
             <ul class="menu {% if section.settings.menu_alignment == 'align_left' %}align_right{% elsif section.settings.menu_alignment == 'align_right' %}align_left{% else %}{{ section.settings.menu_alignment }}{% endif %} clearfix">
               {{ menu_right }}
             </ul>
+            
           </div>
         {% endif %}
         {% if section.settings.search_enabled %}

@@ -500,7 +500,7 @@ body {
   font-style: {{ settings.regular__font.style }};
   font-size: {{ settings.regular_font_size }}px;
   text-transform: {{ settings.regular_font_style }};
-  color: {{ settings.regular_color }};
+  color: #000;
   line-height: 1.6em;
   overflow: auto;
   -webkit-font-smoothing: antialiased;
@@ -1529,7 +1529,7 @@ body.is-active {
   display: none;
   .top_bar {
     text-align: center;
-    height: 40px;
+    height: 70px;
     @include flexbox();
     @include align-items(center);
     .icon-search {
@@ -8320,8 +8320,8 @@ html.remodal-is-locked {
     }
     #header a.mobile_logo img {
       width: auto;
-      max-width: 150px;
-      max-height: 30px;
+      // max-width: 150px;
+      max-height: 50px;
     }
 
     .payment_methods {

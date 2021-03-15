@@ -152,7 +152,11 @@
       {% section 'newsletter' %}
     {% endunless %}
 
+    {% comment %}
     {% section 'footer' %}
+    {% endcomment %}
+
+    {% section 'cog-footer' %}
 
     {% if settings.size_chart != blank %}
       {% include 'popup-size-chart' %}
