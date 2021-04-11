@@ -1,7 +1,4 @@
 <section class="cog_page_section">
-    <div class="cog_press_hero">
-        <img src="{{section.settings.cog_press_hero  | img_url: 'master'}}" />
-    </div>
 
     <div class="cog_press_partners">
         <div class="frow justify-between">
@@ -19,13 +16,6 @@
 {% schema %}
 {
     "name": "COG Press Content",
-    "settings": [
-        {
-            "type": "image_picker",
-            "id": "cog_press_hero",
-            "label": "Press Hero Image"
-        }
-    ],
     "blocks": [
         {
             "type": "component",
