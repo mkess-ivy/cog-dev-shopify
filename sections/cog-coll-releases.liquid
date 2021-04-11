@@ -1,0 +1,24 @@
+<div id="content" class="row">
+
+    <div class="cog-product-wrapper">
+        <div class="cog-collection-3col">
+            
+            {% for link in linklists.new-releases.links %}
+            <div class="collection-thumb-title">
+                {{ link.object.title | escape }} 
+            </div>
+            {% endfor %}
+
+            <div class="frow justify-start">
+                {% for product in collections.t-shirts.products limit:3 %}
+                    <div class="">{{ collection.title }}</div>
+                    <div class="cog-3coll-product">
+                        <img src="{{ product.featured_image | img_url: 'master' }}" /><br/>
+                        {{ product.title }}<br/>
+                        {{ product.price  | money_without_trailing_zeros }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

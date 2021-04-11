@@ -1,0 +1,36 @@
+<div style="background-image:url('{{ section.settings.cog_cta_bg | img_url: 'master' }}');">
+    <div class="cog_home_img"><img src="{{ section.settings.cog_home_logo | img_url: 'master' }}" /></div>
+
+    <a href="{{ section.settings.cog_cta_url }}">
+        <div>{{ section.settings.cog_cta_title }}</div>
+    </a>
+
+</div>
+
+{% schema %}
+{
+    "name": "COG CTA Shop",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "cog_cta_bg",
+            "label": "COG CTA BG"
+        },
+        {
+            "type": "image_picker",
+            "id": "cog_home_logo",
+            "label": "COG Home Logo"
+        },
+        {
+            "type": "url",
+            "id": "cog_cta_url",
+            "label": "COG CTA URL"
+        },
+        {
+            "type": "text",
+            "id": "cog_cta_title",
+            "label": "COG CTA Title"
+        }
+    ]
+}
+{% endschema %}
