@@ -1,14 +1,18 @@
-<div>{{ section.settings.cog_products_title}}</div>
-<div class="frow justify-start">
-    {% for product in collections.all.products %}
-    <div class="cog-product">
-       
-        <a href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master' }}" /></a><br/>
-        {{ product.title }}<br/>
-        {{ product.price | money_without_trailing_zeros }}
+<div class="cog_page_wrapper">
+    <div>{{ section.settings.cog_products_title}}</div>
+    
+    <div class="frow justify-start">
+        {% for product in collections.all.products %}
+        <div class="cog-product">
+        
+            <a href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master' }}" /></a><br/>
+            {{ product.title }}<br/>
+            {{ product.price | money_without_trailing_zeros }}
+        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
 </div>
+
 
 {% schema %}
 {
