@@ -66,10 +66,6 @@
             <span>{{ article.published_at | date: format: "month_day_year" }}</span>
           {% endif %}
 
-          {% if section.settings.read_time %}
-            {% include 'include-read-time' %}
-          {% endif %}
-
           {% if section.settings.blog_tags %}
             <div class="blog_meta tags">
               {% for tag in article.tags %}
