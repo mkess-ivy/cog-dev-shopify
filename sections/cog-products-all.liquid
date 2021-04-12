@@ -1,0 +1,24 @@
+<div>{{ section.settings.cog_products_title}}</div>
+<div class="frow justify-start">
+    {% for product in collections.all.products %}
+    <div class="cog-product">
+       
+        <a href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master' }}" /></a><br/>
+        {{ product.title }}<br/>
+        {{ product.price | money_without_trailing_zeros }}
+    </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+    "name": "COG Products",
+    "settings": [
+        {
+            "type": "text",
+            "id": "cog_products_title",
+            "label": "COG Products Title"
+        }
+    ]
+}
+{% endschema %}
