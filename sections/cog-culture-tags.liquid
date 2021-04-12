@@ -1,0 +1,42 @@
+<section>
+    <div class="frow justify-between">
+        
+        {% for block in section.blocks limit:3 %}
+        <a href="https://cityofgodsbmore.myshopify.com/blogs/events/tagged/{{ block.settings.cog_tag_handle }}">
+            <div style="background-image:url('{{ block.settings.cog_tag_img | img_url: 'master' }}');">
+                <div class="">{{ block.settings.cog_tag_title }}</div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "COG Culture Tags",
+    "blocks": [
+    {
+        "type": "component",
+        "name": "COG Culture Tags",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "cog_tag_img",
+                "label": "COG Tag Img"
+            },
+            {
+                "type": "text",
+                "id": "cog_tag_title",
+                "label": "COG Tag Title"
+            },
+            {
+                "type": "text",
+                "id": "cog_tag_handle",
+                "label": "COG Tag Handle"
+            }
+        ]
+    }
+    ]
+}
+{% endschema %}

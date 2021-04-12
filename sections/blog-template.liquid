@@ -20,8 +20,16 @@
 
 {% paginate blog.articles by section.settings.blog_posts_per_page %}
   <div class="blog-header clearfix">
+    {% if current_tags contains null %}
     <div>{{ blog.title }}</div>
     <div>{{ section.settings.cog_blog_desc }}</div>
+    {% endif %}
+    {% if current_tags contains "silentbeachparty" %}
+    <div>Silent Beach Party</div>
+    {% elsif current_tags contains "respectdj" %}
+    <div>Respect the DJ</div>
+    {% endif %}
+
     <div class="eight columns section_select medium-down--one-whole">
       
       {% if section.settings.blog_tags %}
