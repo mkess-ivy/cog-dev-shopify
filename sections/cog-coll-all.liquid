@@ -12,7 +12,7 @@
                 {% for product in collections.all.products %}
                     
                     <div class="cog-coll-product">
-                        <img src="{{ product.featured_image | img_url: 'master' }}" />
+                        <a href="{{ product.url }}" alt="Image of {{ product.title }}"><img src="{{ product.featured_image | img_url: 'master' }}" /></a>
                         <div class="cog-product-title">{{ product.title }}</div>
                         <div class="cog-product-price">{{ product.price  | money_without_trailing_zeros }}</div>
                     </div>
