@@ -1,0 +1,36 @@
+<div id="content" class="row">
+
+    <div class="cog-product-wrapper">
+        <div class="cog-collection-3col">
+            
+            <div class="collection-thumb-title">
+                {{ section.settings.cog_products_title}}
+            </div>
+           
+
+            <div class="frow justify-between">
+                {% for product in collections.all.products %}
+                    
+                    <div class="cog-coll-product">
+                        <img src="{{ product.featured_image | img_url: 'master' }}" />
+                        <div class="cog-product-title">{{ product.title }}</div>
+                        <div class="cog-product-price">{{ product.price  | money_without_trailing_zeros }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "COG Products",
+    "settings": [
+        {
+            "type": "text",
+            "id": "cog_products_title",
+            "label": "COG Products Title"
+        }
+    ]
+}
+{% endschema %}
