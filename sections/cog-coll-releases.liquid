@@ -9,13 +9,13 @@
             </div>
             {% endfor %}
 
-            <div class="frow justify-start">
-                {% for product in collections.t-shirts.products limit:3 %}
+            <div class="frow justify-between">
+                {% for product in collections.new-releases.products limit:4 %}
                     <div class="">{{ collection.title }}</div>
-                    <div class="cog-3coll-product">
-                        <img src="{{ product.featured_image | img_url: 'master' }}" /><br/>
-                        {{ product.title }}<br/>
-                        {{ product.price  | money_without_trailing_zeros }}
+                    <div class="cog-coll-product">
+                        <img src="{{ product.featured_image | img_url: 'master' }}" />
+                        <div class="cog-product-title">{{ product.title }}</div>
+                        <div class="cog-product-price">{{ product.price  | money_without_trailing_zeros }}</div>
                     </div>
                 {% endfor %}
             </div>

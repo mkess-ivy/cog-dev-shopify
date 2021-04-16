@@ -9,10 +9,10 @@
             </div>
             {% endfor %}
 
-            <div class="frow justify-start">
-                {% for product in collections.hoodies.products limit:3 %}
+            <div class="frow justify-between">
+                {% for product in collections.artist-collection.products limit:4 %}
                     <div class="">{{ collection.title }}</div>
-                    <div class="cog-3coll-product">
+                    <div class="cog-coll-product">
                         <img src="{{ product.featured_image | img_url: 'master' }}" /><br/>
                         {{ product.title }}<br/>
                         {{ product.price  | money_without_trailing_zeros }}
