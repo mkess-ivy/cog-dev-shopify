@@ -1,6 +1,6 @@
 <section class="cog_home_bottom">
     <div class="frow justify-between">
-        <a href="{{ section.settings.cog_shop_url }}" class="cog_bottom_link">
+        <a href="{{ section.settings.cog_culture_url }}" class="cog_bottom_link">
             <div class="cog_bottom_half" style="background-image:url('{{ section.settings.cog_bottom_one | img_url: 'master' }}');">
                 <div class="frow centered">
                     {{ section.settings.cog_bottom_left_text }}
@@ -27,24 +27,24 @@
             "label": "COG Bottom Img 1"
         },
         {
+            "type": "text",
+            "id": "cog_bottom_left_text",
+            "label": "COG Bottom Left Text"
+        },
+        {
+            "type": "url",
+            "id": "cog_culture_url",
+            "label": "COG Culture URL"
+        },
+        {
             "type": "image_picker",
             "id": "cog_bottom_two",
             "label": "COG Bottom Img 2"
         },
         {
             "type": "text",
-            "id": "cog_bottom_left_text",
-            "label": "COG Bottom Left Text"
-        },
-        {
-            "type": "text",
             "id": "cog_bottom_right_text",
             "label": "COG Bottom Right Text"
-        },
-        {
-            "type": "url",
-            "id": "cog_shop_url",
-            "label": "COG Shop URL"
         },
         {
             "type": "url",
