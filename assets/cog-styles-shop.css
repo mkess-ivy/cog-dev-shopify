@@ -17,6 +17,7 @@
 }
 .cog-product-wrapper {
     margin-bottom: 100px;
+    padding: 0 15px;
 }
 .cog_section_shop_cta {
     height: 40vh;
@@ -27,8 +28,10 @@
 .cog_section_shop_cta a {
     color: var(--color-white);
 }
+
 .cog_shop_img {
-    width: 60%;
+    width: 50%;
+    max-width: 375px;
     margin: 0 auto 40px;
 }
 .cog_shop_cta_wrapper {
