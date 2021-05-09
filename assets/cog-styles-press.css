@@ -127,7 +127,7 @@
 @media screen and (min-width: 992px) {
     .cog_partner_logo {
         width: 33%;
-        max-width: inherit;
+        max-width: 300px;
     }
     .cog_press_partners {
         width: 100%;
