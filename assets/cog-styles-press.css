@@ -4,35 +4,40 @@
     margin: 75px auto 0;
 }
 .cog_page_section_title {
-    width: 100%;
-    margin: 0 auto;
+    width: 90%;
+    margin: 75px auto 50px;
     text-align: center;
     color: var(--color-blue);
 }
 .cog_page_title {
     font-family: var(--header-font);
-    text-transform:uppercase;
-    font-size:24px;
+    font-size:36px;
     line-height: 1;
-    padding-bottom:25px;
+    /* padding-bottom:25px; */
     letter-spacing: 1px;
+    color: var(--color-white);
 }
 .cog_page_description {
     font-family: var(--body-font);
     font-size: 18px;
     font-weight: normal;
-    padding-bottom: 50px;
 }
 .cog_press_hero {
-    text-align: center;
+    background-position: center;
 }
 .cog_press_hero img {
     width: 100%;
 }
-
+.cog_press_title {
+    font-family: var(--header-font);
+    font-size: 28px;
+}
+.cog_press_mentions {
+    margin: 0 20px;
+}
 /*  Press Partners */
 .cog_press_partners {
-    padding: 75px 0 125px;
+    padding: 0px;
 }
 .cog_partner_logo {
     /* width: 50%; */
@@ -52,18 +57,19 @@
     margin:auto;
     font-size: 15px;
     padding-bottom: 15px;
-    
 }
 .pm_item {
     font-size: 18px;
     /* padding-bottom: 15px; */
-    padding-bottom: 25px;
+    padding-bottom: 35px;
     border-bottom: 1px solid var(--color-blue);
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     color: var(--color-blue);
     text-align: center; 
 }
-
+.pm_item:last-child {
+    border-bottom: 0;
+}
 .pm_item a,
 .pm_item a:visited {
     color: var(--color-blue);
@@ -71,19 +77,24 @@
 .pm_title {
     width:100%;
 }
+#shopify-section-cog-press-mentions {
+    margin-bottom: 75px;
+}
 
+@media screen and (min-width: 600px) {
+    .cog_page_title {
+        font-size: 48px;
+    }
+}
 @media screen and (min-width: 767px) {
     /* Press Title */
     .cog_page_section_title {
         /* width: 75%; */
     }
     .cog_page_description {
-        width:63%;
+        width:75%;
         margin:auto;
-    }
-    .cog_press_hero {
-        width: 75%;
-        margin: auto;
+        font-size: 20px;
     }
     .cog_press_partners {
         width: 75%;
@@ -92,13 +103,19 @@
     .contact_email {
         font-size: 20px;
     }
+    .cog_page_title {
+        font-size: 64px;
+    }
+    .cog_press_mentions {
+        margin: 0;
+    }
 
     /* Press Mentions */
     .pm_pub {
         font-weight: bold;
-        margin-right: 30px;
         max-width: 225px;
         width:25%;
+        margin:0 20px 0 0;
     }
     .pm_title {
         width: 70%;
@@ -107,12 +124,27 @@
         text-align: left;
     }
 }
-
-@media screen and (min-width: 1024px) {
-    .cog_press_hero {
-        width: 75%;
+@media screen and (min-width: 992px) {
+    .cog_partner_logo {
+        width: 33%;
+        max-width: inherit;
     }
     .cog_press_partners {
         width: 100%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .cog_press_partners {
+        width: 100%;
+    }
+    .cog_page_section_title {
+        margin: 75px auto;
+    }
+    .cog_page_description {
+        font-size: 24px;
+        line-height: 1.2;
+        padding-bottom: 20px;
     }
 }

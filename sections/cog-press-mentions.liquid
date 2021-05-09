@@ -1,7 +1,7 @@
 <section class="cog_page_section_title">
-    <div class="cog_page_title">{{section.settings.cog_press_mentions_title}}</div>
-    {% if section.settings.cog_press_mentions_desc %}
-        <div class="cog_page_description">{{section.settings.cog_press_mentions_desc}}</div>
+    <div class="cog_press_title">{{section.settings.ments_title}}</div>
+    {% if section.settings.ments_desc %}
+        <div class="cog_page_description">{{section.settings.ments_desc}}</div>
     {% endif %}
 </section>
 
@@ -27,13 +27,13 @@
     "settings": [
         {
             "type": "text",
-            "id": "cog_press_mentions_title",
+            "id": "ments_title",
             "label": "Press Mentions Title"
 
         },
         {
             "type": "textarea",
-            "id": "cog_press_mentions_desc",
+            "id": "ments_desc",
             "label": "Press Mentions Description"
         }
     ],
