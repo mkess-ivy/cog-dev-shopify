@@ -121,7 +121,7 @@ h1,h2,h3,h4,h5,h6 {
 /* Events Blog */
 .cog_events_meta {
     width:90%;
-    margin:0 auto 75px;
+    margin: 75px auto;
     text-align: center;
     font-family: var(--body-font);
     font-size: 18px;
@@ -167,6 +167,26 @@ h1,h2,h3,h4,h5,h6 {
 }
 .article:last-child {
     margin-bottom: 25px !important;
+}
+
+/* EVENTS PAGE - SINGLE */
+.article_content p {
+    font-family: var(--body-font);
+    font-size: 24px;
+    line-height: 1.2;
+}
+.article_content {
+    margin-top: 75px;
+}
+.author_share_wrap {
+    border-top: 0;
+}
+.page_banner {
+    margin-top: 80px !important;
+}
+.caption .headline {
+    font-size: 36px;
+    line-height: 1;
 }
 
 /* Media Queries */
@@ -251,6 +271,11 @@ h1,h2,h3,h4,h5,h6 {
         width: 50%;
         padding: 0 10px;
     }
+
+    /* Single Events Page */
+    .caption .headline {
+        font-size: 60px;
+    }
 }
 @media screen and (min-width:900px) {
 
@@ -275,10 +300,27 @@ h1,h2,h3,h4,h5,h6 {
     /* Events Blog */
     .cog_events_meta {
         width: 65%;
+        font-size: 24px;
     }
     .cog_events_title {
         font-size: 32px;
         margin-bottom: 15px;
+    }
+
+    /* Single Events Page */
+    .caption .headline {
+        width: 90%;
+        margin: auto;
+    }
+    .blog_share {
+        width: 41%;
+    }
+    .page_banner {
+        margin-top: 100px !important;
+    }
+    .cog_page_wrapper.events {
+        max-width: initial;
+        width: 90%;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -292,4 +334,17 @@ h1,h2,h3,h4,h5,h6 {
         margin: 0 0 0 25px;
         font-size: 48px;
      }
+
+     /* Single Events Page */
+    .article_content p {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+    .caption .headline {
+        font-size: 80px;
+        width: 100%;
+    }
+    .cog-single-event-content {
+        max-width: initial;
+    }
 }
