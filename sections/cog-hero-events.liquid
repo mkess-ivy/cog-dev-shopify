@@ -1,11 +1,7 @@
-<section class="cog_home_hero" style="background-image:url('{{ section.settings.cog_home_img | img_url: 'master' }}');">
+<section class="cog_home_hero events" style="background-image:url('{{ section.settings.cog_home_img | img_url: 'master' }}');">
     <div class="frow centered">
         <div class="cog_page_title">{{section.settings.cog_page_title}}</div>
     </div>
-</section>
-
-<section class="cog_page_section_title">
-    <div class="cog_page_description">{{section.settings.cog_press_desc}}</div>
 </section>
 
 {% schema %}
@@ -22,11 +18,6 @@
             "id": "cog_page_title",
             "label": "COG Page Title"
 
-        },
-        {
-            "type": "textarea",
-            "id": "cog_page_desc",
-            "label": "COG Page Description"
         }
     ]
 }

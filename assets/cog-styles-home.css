@@ -6,6 +6,9 @@
     width: 100%;
     height: 75vh;
 }
+.cog_home_hero.events {
+    background-position: right;
+}
 .cog_shop_hero {
     background-position: center;
     background-repeat:no-repeat;

@@ -1,8 +1,5 @@
 /*  Press Page */
-.cog_page_wrapper {
-    max-width: 1000px;
-    margin: 75px auto 0;
-}
+
 .cog_page_section_title {
     width: 90%;
     margin: 75px auto 50px;
@@ -11,7 +8,7 @@
 }
 .cog_page_title {
     font-family: var(--header-font);
-    font-size:36px;
+    font-size:60px;
     line-height: 1;
     /* padding-bottom:25px; */
     letter-spacing: 1px;

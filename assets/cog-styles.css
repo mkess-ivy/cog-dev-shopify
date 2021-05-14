@@ -1,7 +1,7 @@
 :root {
     --color-blue: #0C0863;
     --color-white: #ffffff;
-    --color-black: #000;
+    --color-black: #212121;
     --header-font: 'DM Serif Display', Helvetica, sans-serif;
     --body-font: 'DM Serif Text', Helvetica, sans-serif;
 }
@@ -14,6 +14,13 @@ h1,h2,h3,h4,h5,h6 {
 .cog_wrapper_home {
     margin: 0 auto;
     font-family: var(--body-font);
+}
+.cog_page_wrapper {
+    max-width: 1000px;
+    margin: 75px auto 0;
+}
+.cog_page_wrapper.events {
+    margin: 50px auto 0;
 }
 .cart_container {
     display: inline;
@@ -72,8 +79,6 @@ h1,h2,h3,h4,h5,h6 {
     display: none;
 }
 
-
-
 /* Newsletter */
 .cog_newsletter {
     padding: 55px 0;
@@ -113,6 +118,56 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
 }
 
+/* Events Blog */
+.cog_events_meta {
+    width:90%;
+    margin:0 auto 75px;
+    text-align: center;
+    font-family: var(--body-font);
+    font-size: 18px;
+    line-height: 1.2;
+}
+.cog_events_title {
+    margin-bottom: 25px;
+    font-size: 28px;
+    line-height: 1.2;
+    font-family: var(--header-font);
+}
+.cog_single_article {
+    margin-bottom: 75px;
+}
+
+.cog_blog_title {
+    color: var(--color-black) !important;
+    margin-top: 30px;
+    font-size: 28px;
+    font-family: var(--header-font);
+    padding-right: 50px;
+}
+.cog_blog_title a {
+    color: var(--color-black) !important;
+}
+.cog_blog_title a:hover {
+    color: var(--color-blue) !important;
+}
+.cog_blog_desc {
+    line-height: 1.2;
+}
+.excerpt {
+    margin: 0.7em 0;
+}
+.excerpt p {
+    margin:0;
+    font-size: 18px;
+    line-height: 1.2;
+    font-family: var(--body-font);
+}
+.article {
+    margin-bottom: 100px;
+}
+.article:last-child {
+    margin-bottom: 25px !important;
+}
 
 /* Media Queries */
 @media screen and (min-width: 550px) {
@@ -140,7 +195,6 @@ h1,h2,h3,h4,h5,h6 {
         padding: 40px 25px 50px;
     }
 }
-
 @media screen and (min-width: 767px) {
     /* Global */
     .cog_page_wrapper {
@@ -191,6 +245,12 @@ h1,h2,h3,h4,h5,h6 {
         width: 53%;
         margin: 0;
     }
+
+    /* Events Blog */
+    .cog_single_article {
+        width: 50%;
+        padding: 0 10px;
+    }
 }
 @media screen and (min-width:900px) {
 
@@ -210,9 +270,17 @@ h1,h2,h3,h4,h5,h6 {
     }
     .partner-logo-width {
         width: 200px;
-    } 
-}
+    }
 
+    /* Events Blog */
+    .cog_events_meta {
+        width: 65%;
+    }
+    .cog_events_title {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+}
 @media screen and (min-width: 1200px) {
     .cog_newsletter_group {
         margin:0;

@@ -56,75 +56,40 @@
   {% endif %}
 
 
-  <div class="{% if sidebar %}twelve medium-down--one-whole {% else %}sixteen{% endif %} columns equal-columns--outside-trim equal-columns--clear">
+  <div class="cog_single_article_wrapper">
+    <div class="frow justify-start">
     {% for article in blog.articles %}
-      {% if section.settings.blog_posts_per_row == 1 %}
-        {% if article.image %}
-          <div class="nine columns alpha article_image large-down--one-half">
-            <a href="{{ article.url }}" title="{{ article.title | escape }}">
-              {% include 'image-element', image: article.image, alt: image.alt %}
-            </a>
-          </div>
-          <div class="{% if sidebar %}five{% else %}seven{% endif %} columns omega article medium-down--one-half">
-        {% else %}
-          <div class="{% if sidebar %}eight{% else %}sixteen{% endif %} columns alpha omega article">
-        {% endif %}
-      {% else %}
-      <div class="{% if section.settings.blog_posts_per_row == 2 %}eight columns {% elsif section.settings.blog_posts_per_row == 3 %}one-third column {% else %}four columns{% endif %} article medium-down--one-half small-down--one-whole">
-
-        {% if article.image %}
-          <a href="{{ article.url }}" title="{{ article.title | escape }}">
-            {% include 'image-element', image: article.image, alt: image.alt %}
-          </a>
-        {% endif %}
-      {% endif %}
-
-
-        <h2><a href="{{ article.url }}">{{ article.title }}</a></h2>
-
-        <p class="blog_meta">
-          {% if section.settings.blog_author %}
-            <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
-          {% endif %}
-
-          {% if section.settings.blog_comment_count %}
-            {% if settings.disqus_enabled %}
-              <span>
-                <a href="{{ article.url }}#disqus_thread" data-disqus-identifier="{{ article.id }}" class="disqus-comment-count">{{ 'blogs.counts.comments_with_count' | t: count: 0 }}</a>
-              </span>
-            {% elsif article.comments_enabled? and article.comments_count > 0 %}
-              <span>
-                <a href="{{ article.url }}#comments">{{ 'blogs.counts.comments_with_count' | t: count: article.comments_count }}</a>
-              </span>
-            {% endif %}
-          {% endif %}
-        </p>
-        {% if section.settings.blog_tags %}
-          <div class="blog_meta tags">
-            {% for tag in article.tags %}
-              <span><a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} {{ 'blogs.general.tagged' | t }} {{ tag | escape }}">{{ tag }}</a></span>
-            {% endfor %}
-          </div>
-        {% endif %}
-
-        {% if article.excerpt != blank %}
-          <div class="excerpt"> {{ article.excerpt }}</div>
-        {% endif %}
-        
+     
+    <div class="cog_single_article">
+      <div class="">
+        <a href="{{ article.url }}" title="{{ article.title | escape }}">
+          {% include 'image-element', image: article.image, alt: image.alt %}
+        </a>
       </div>
-      {% if section.settings.blog_posts_per_row == 2 %}
-        {% cycle "article_row": '', '<br class="clear" />' %}
-      {% elsif section.settings.blog_posts_per_row == 3 %}
-        {% cycle "article_row": '', '', '<br class="clear" />' %}
-      {% elsif section.settings.blog_posts_per_row == 4 %}
-        {% cycle "article_row": '', '', '', '<br class="clear" />' %}
-      {% else %}
-        <br class="clear" />
+      
+      <h2 class="cog_blog_title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+
+      <p class="blog_meta ">
+        {% if section.settings.blog_author %}
+          <span>{{ 'blogs.article.by_author' | t: author: article.author }}</span>
+        {% endif %}
+      </p>
+
+      {% if section.settings.blog_tags %}
+        <div class="blog_meta tags">
+          {% for tag in article.tags %}
+            <span><a href="{{ shop.url }}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" title="{{ blog.title }} {{ 'blogs.general.tagged' | t }} {{ tag | escape }}">{{ tag }}</a></span>
+          {% endfor %}
+        </div>
       {% endif %}
+
+      {% if article.excerpt != blank %}
+        <div class="excerpt cog_blog_desc"> {{ article.excerpt }}</div>
+      {% endif %}
+        </div>
     {% endfor %}
   </div>
-
-  {% include "blog-sidebar", blog_handle: blog.handle %}
+  </div>
 
   <br class="clear" />
   <div class="sixteen columns">

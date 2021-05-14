@@ -1,0 +1,24 @@
+<div class="cog_page_wrapper events">
+    <section class="cog_events_meta">
+        <div class="cog_events_title">{{ section.settings.cog_events_title}}</div>
+        <div class="cog_events_desc">{{ section.settings.cog_events_desc}}</div>
+    </section>
+</div>
+
+{% schema %}
+{
+    "name": "COG Events Title",
+    "settings": [
+        {
+            "type": "text",
+            "id": "cog_events_title",
+            "label": "Events Blog Title"
+        },
+        {
+            "type": "textarea",
+            "id": "cog_events_desc",
+            "label": "Events Blog Description"
+        }
+    ]
+}
+{% endschema %}
