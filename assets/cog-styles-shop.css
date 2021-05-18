@@ -3,7 +3,7 @@
 .collection-thumb-title {
     text-align: center;
     font-size: 28px;
-    color: var(--color-blue);
+    color: var(--color-black);
     margin-bottom: 40px;
     font-size: 40px;
     font-family: var(--header-font);
@@ -13,7 +13,10 @@
     margin-bottom: 50px;
 }
 .cog-product-title {
-    text-transform: uppercase;
+    font-family: var(--body-font);
+    color: var(--color-black);
+    letter-spacing: 0.2px;
+    font-size: 20px;
 }
 .cog-product-wrapper {
     margin-bottom: 100px;

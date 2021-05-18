@@ -13,9 +13,9 @@
                 {% for product in collections.artist-collection.products limit:4 %}
                     <div class="">{{ collection.title }}</div>
                     <div class="cog-coll-product">
-                        <img src="{{ product.featured_image | img_url: 'master' }}" /><br/>
-                        {{ product.title }}<br/>
-                        {{ product.price  | money_without_trailing_zeros }}
+                        <a href="{{ product.url }}"><img src="{{ product.featured_image | img_url: 'master' }}" /></a>
+                        <div class="cog-product-title"><a href="{{ product.url }}">{{ product.title }}</a></div>
+                        <div class="cog-product-price">{{ product.price  | money_without_trailing_zeros }}</div>
                     </div>
                 {% endfor %}
             </div>

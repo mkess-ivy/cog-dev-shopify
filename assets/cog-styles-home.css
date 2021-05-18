@@ -9,6 +9,9 @@
 .cog_home_hero.events {
     background-position: right;
 }
+.cog_home_hero.center {
+    background-position: center;
+}
 .cog_shop_hero {
     background-position: center;
     background-repeat:no-repeat;
