@@ -51,3 +51,49 @@
     /* font-weight: normal; */
     text-transform: uppercase;
 }
+
+/* Content */
+.cog_contact_wrapper {
+    width: 90%;
+    margin: 0 auto 75px;
+}
+.cog_contact_title {
+    font-family: var(--header-font);
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.cog_contact_address {
+    font-family: var(--body-font);
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 75px;
+}
+.single_contact_info {
+    font-family: var(--body-font);
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+.single_contact_info_below {
+    margin-bottom: 20px;
+}
+.single_contact_info_below a {
+    font-family: var(--body-font);
+    color: var(--color-black);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.single_contact_info_below a:hover {
+    color: var(--color-blue);
+}
+
+@media screen and (min-width: 767px) {
+    .cog_contact_address {
+        font-size: 40px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .contact_2col {
+        width: 50%;
+    }
+}

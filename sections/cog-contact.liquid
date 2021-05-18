@@ -1,11 +1,11 @@
-<section>
+<section class="cog_contact_wrapper">
     <div class="frow justify-between">
         <div class="contact_2col">
-            <div>{{ section.settings.cog_contact_title-l }}</div>
-            <div>{{ section.settings.cog-contact_address }}</div>
+            <div class="cog_contact_title">{{ section.settings.cog_contact_title-l }}</div>
+            <div class="cog_contact_address">{{ section.settings.cog-contact_address }}</div>
         </div>
         <div class="contact_2col">
-            <div>{{ section.settings.cog_contact_title-r }}</div>
+            <div class="cog_contact_title">{{ section.settings.cog_contact_title-r }}</div>
             <div class="contact_desc">
                 {% for block in section.blocks %}
                     <div class="single_contact_info">{{ block.settings.cog_info_desc }}</div>
