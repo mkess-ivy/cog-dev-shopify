@@ -1,0 +1,53 @@
+<section class="cog_contact_nav">
+    <div class="frow justify-between">
+        <div class="cog_contact_nav_item" style="background-image:url('{{ section.settings.cog_nav_bg1 | img_url: 'master' }}');">
+            <div class="frow centered">
+                <a href="{{ section.settings.cog_cta_nav_url1 }}">{{ section.settings.cog_nav_title1 }}</a>
+            </div>
+            
+        </div>
+        <div class="cog_contact_nav_item" style="background-image:url('{{ section.settings.cog_nav_bg2 | img_url: 'master' }}');">
+            <div class="frow centered">
+                <a href="{{ section.settings.cog_cta_nav_url2 }}">{{ section.settings.cog_nav_title2 }}</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "COG Contact Nav",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "cog_nav_bg1",
+            "label": "COG NAV BG 1"
+        },
+        {
+            "type": "url",
+            "id": "cog_cta_nav_url1",
+            "label": "COG NAV URL 1"
+        },
+        {
+            "type": "text",
+            "id": "cog_nav_title1",
+            "label": "COG CTA Title 1"
+        },
+        {
+            "type": "image_picker",
+            "id": "cog_nav_bg2",
+            "label": "COG NAV BG 2"
+        },
+        {
+            "type": "url",
+            "id": "cog_cta_nav_url2",
+            "label": "COG NAV URL 2"
+        },
+        {
+            "type": "text",
+            "id": "cog_nav_title2",
+            "label": "COG CTA Title 2"
+        }
+    ]
+}
+{% endschema %}
