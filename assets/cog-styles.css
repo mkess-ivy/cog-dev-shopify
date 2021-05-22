@@ -197,9 +197,9 @@ h1,h2,h3,h4,h5,h6 {
     margin-top: 80px !important;
 }
 .caption .headline {
-    font-size: 36px;
+    font-size: 24px;
     line-height: 1;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 /* Media Queries */
@@ -226,6 +226,10 @@ h1,h2,h3,h4,h5,h6 {
     /*  Footer */
     .cog_footer_group  {
         padding: 40px 25px 50px;
+    }
+
+    .caption .headline {
+        font-size: 36px;
     }
 }
 @media screen and (min-width: 767px) {
