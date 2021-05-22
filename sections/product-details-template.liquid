@@ -380,6 +380,18 @@
 
     </div><!-- closes <div class="container main content"> -->
 
+<!-- Product Bottom CTA -->
+<div class="cog_section_shop_cta js-reveal" style="background-image:url('{{ section.settings.cog_cta_bg | img_url: 'master' }}');">
+  <div class="frow centered">
+      <div class="cog_shop_cta_wrapper">
+          <div class="cog_shop_img"><img src="{{ section.settings.cog_home_logo | img_url: 'master' }}" /></div>
+
+          <a href="{{ section.settings.cog_cta_url }}">
+              <div class="cog_shop_cta">{{ section.settings.cog_cta_title }}</div>
+          </a>
+      </div>
+  </div>
+</div>
 
 </div>
 </div>
