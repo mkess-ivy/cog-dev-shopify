@@ -25,6 +25,9 @@ h1,h2,h3,h4,h5,h6 {
 .cart_container {
     display: inline;
 }
+.index-sections {
+    margin-top: 125px;
+}
 
 
 /* Footer */
@@ -97,6 +100,8 @@ h1,h2,h3,h4,h5,h6 {
 .cog_newsletter_group {
     margin: 25px auto 0;
 }
+
+
 
 /* Customer Service Page */
 .cs_wrapper {
@@ -188,6 +193,7 @@ h1,h2,h3,h4,h5,h6 {
 .caption .headline {
     font-size: 36px;
     line-height: 1;
+    padding-bottom: 20px;
 }
 
 /* Media Queries */
