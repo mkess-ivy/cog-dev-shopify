@@ -15,6 +15,9 @@
     color: var(--color-white);
     text-align: center;
 }
+.cog_page_title.cs {
+    color: var(--color-black);
+}
 .cog_page_description {
     font-family: var(--body-font);
     font-size: 18px;

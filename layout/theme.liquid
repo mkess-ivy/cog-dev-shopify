@@ -18,6 +18,7 @@
     <!-- Stylesheets for Turbo 4.0.3 -->
     {{ 'styles.scss.css' | asset_url | stylesheet_tag }}
 
+
     <!-- Custom Stylesheets -->
     {{ 'frow.css' | asset_url | stylesheet_tag }}
     {{ 'cog-styles.css' | asset_url | stylesheet_tag }}
@@ -25,6 +26,7 @@
     {{ 'cog-styles-shop.css' | asset_url | stylesheet_tag }}
     {{ 'cog-styles-press.css' | asset_url | stylesheet_tag }}
     {{ 'cog-styles-contact.css' | asset_url | stylesheet_tag }}
+
 
     <script>
       /*! lazysizes - v4.1.4 */
@@ -243,8 +245,9 @@
 
     <script>
       {{ settings.custom_scripts }}
-      
     </script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    {{ "cog-script.js" | asset_url | script_tag }}
 
   </body>
 </html>

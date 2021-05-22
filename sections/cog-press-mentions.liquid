@@ -1,11 +1,11 @@
-<section class="cog_page_section_title">
+<section class="cog_page_section_title js-reveal">
     <div class="cog_press_title">{{section.settings.ments_title}}</div>
     {% if section.settings.ments_desc %}
         <div class="cog_page_description">{{section.settings.ments_desc}}</div>
     {% endif %}
 </section>
 
-<section class="cog_press_mentions">
+<section class="cog_press_mentions js-reveal">
     <div class="press_mentions_list">
         {% for block in section.blocks %}
         <div class="pm_item">

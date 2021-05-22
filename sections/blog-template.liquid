@@ -60,7 +60,7 @@
     <div class="frow justify-start">
     {% for article in blog.articles %}
      
-    <div class="cog_single_article">
+    <div class="cog_single_article js-reveal">
       <div class="">
         <a href="{{ article.url }}" title="{{ article.title | escape }}">
           {% include 'image-element', image: article.image, alt: image.alt %}
